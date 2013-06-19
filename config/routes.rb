@@ -1,4 +1,6 @@
 RadiatorAPI::Application.routes.draw do
+  get 'stations/import' => 'stations#import'
+  post 'stations/import' => 'stations#importCreate'
   resources :stations
 
   # The priority is based upon order of creation: first created -> highest priority.

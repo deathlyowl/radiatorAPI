@@ -1,0 +1,43 @@
+<h1>Import station</h1>
+
+<%= render 'importForm' %>
+
+<hr>
+<%= @array %>
+<hr>
+  <% if @station.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
+
+      <ul>
+      <% @station.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @station.name %>
+	</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @station.description %>
+	</p>
+	<p>
+	  <strong>Url:</strong>
+	  <%= @station.url %>
+	</p>
+	<p>
+	  <strong>Genre:</strong>
+	  <%= @station.genre %>
+	</p>
+	<p>
+	  <strong>Shortcut:</strong>
+	  <%= @station.shortcut %>
+	</p>
+<hr>
+
+
+<%= link_to 'Back', stations_path %>

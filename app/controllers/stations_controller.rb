@@ -11,7 +11,34 @@ class StationsController < ApplicationController
   # GET /stations/1.json
   def show
   end
+  
+  # GET /stations/import
+  def import
+    @station = Station.new
+    @csv = String.new
+    @array = Array.new
+  end
 
+  # POST /stations/import
+  def importCreate
+    @station = Station.new
+    @csv = String.new
+    @array = params[:csv].split(";")
+    
+    @station.name = @array[0]
+    @station.url = @array[1]
+    @station.description = @array[2]
+    @station.shortcut = @array[3]
+    @station.genre = @array[4]
+    
+    if @station.save
+      redirect_to @station, notice: 'Station was successfully imported.'
+    else
+      render action: 'import'
+    end
+    
+  end
+  
   # GET /stations/new
   def new
     @station = Station.new
