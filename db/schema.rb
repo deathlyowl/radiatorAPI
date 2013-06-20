@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130619163630) do
+ActiveRecord::Schema.define(version: 20130620013639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channels", force: true do |t|
+    t.integer  "transmitter_id"
+    t.string   "name"
+    t.float    "frequency"
+    t.integer  "power"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stations", force: true do |t|
     t.string   "name"
@@ -22,6 +31,16 @@ ActiveRecord::Schema.define(version: 20130619163630) do
     t.string   "url"
     t.string   "genre"
     t.string   "shortcut"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transmitters", force: true do |t|
+    t.string   "object"
+    t.string   "city"
+    t.string   "place"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

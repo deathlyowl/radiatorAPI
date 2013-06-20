@@ -1,4 +1,12 @@
 RadiatorAPI::Application.routes.draw do
+  get 'channels/import' => 'channels#import'
+  post 'channels/import' => 'channels#importCreate'
+  resources :channels
+
+  get 'transmitters/import' => 'transmitters#import'
+  post 'transmitters/import' => 'transmitters#importCreate'
+  resources :transmitters
+
   get 'stations/import' => 'stations#import'
   post 'stations/import' => 'stations#importCreate'
   resources :stations

@@ -4,4 +4,6 @@ class Station < ActiveRecord::Base
   validates :shortcut,    :presence => true
   validates :genre,       :presence => true
   validates :url,         :format => URI::regexp(%w(http)), :uniqueness => true
+  
+  has_many :channels
 end
