@@ -25,6 +25,8 @@
   <%= @transmitter.longitude %>
 </p>
 
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @transmitter.longitude %>,<%= @transmitter.latitude %>&zoom=13&size=300x300&maptype=roadmap&scale=2&sensor=false">
+
 <hr>
 
 <%= @transmitter.channels.count %> kanałów |
