@@ -1,4 +1,4 @@
-<%= form_for(@station) do |f| %>
+<%= form_for(@station), :html => {:class => "form-horizontal"} do |f| %>
   <% if @station.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="control-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+	<div class="controls">
+	    <%= f.text_field :name, :placeholder => @example.name %>
+	</div>
   </div>
   <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%= f.label :url.capitalize %><br>
+    <%= f.text_field :url, :placeholder => @example.url %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :placeholder => @example.description  %>
   </div>
   <div class="field">
     <%= f.label :shortcut %><br>
-    <%= f.text_field :shortcut %>
+    <%= f.text_field :shortcut, :placeholder => @example.shortcut  %>
   </div>
   <div class="field">
     <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
+    <%= f.text_field :genre, :placeholder => @example.genre %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  
+  <% end %>

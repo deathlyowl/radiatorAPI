@@ -45,6 +45,7 @@ class StationsController < ApplicationController
   # GET /stations/new
   def new
     @station = Station.new
+    @example = Station.all.shuffle.first
   end
 
   # GET /stations/1/edit
@@ -55,6 +56,7 @@ class StationsController < ApplicationController
   # POST /stations.json
   def create
     @station = Station.new(station_params)
+    @example = Station.all.shuffle.first
 
     respond_to do |format|
       if @station.save

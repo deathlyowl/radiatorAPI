@@ -1,31 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Object:</strong>
-  <%= @transmitter.object %>
-</p>
+<h1><%= @transmitter.place %></h1>
 
-<p>
-  <strong>City:</strong>
-  <%= @transmitter.city %>
-</p>
-
-<p>
-  <strong>Place:</strong>
-  <%= @transmitter.place %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @transmitter.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @transmitter.longitude %>
-</p>
-
-<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @transmitter.longitude %>,<%= @transmitter.latitude %>&zoom=13&size=300x300&maptype=roadmap&scale=2&sensor=false">
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @transmitter.longitude %>,<%= @transmitter.latitude %>&zoom=13&size=300x300&maptype=roadmap&scale=2&sensor=false" class="image-circle">
 
 <hr>
 
