@@ -10,6 +10,20 @@
       </ul>
     </div>
   <% end %>
+  
+  <% if Station.where(:name => @channel.name).count == 0 then %>
+  <% if @something.length > 0 %>
+	  <div class="alert alert-info">
+	    <button type="button" class="close" data-dismiss="alert">&times;</button>
+	    <strong>Podpowiedź!</strong> Być może stacja, której szukasz to <%= @something.first %>?.
+	  </div>
+	  <% else%>
+	  <div class="alert alert-error">
+	    <button type="button" class="close" data-dismiss="alert">&times;</button>
+	    <strong>Problem!</strong> Niestety nie mam dla Ciebie żadnej podpowiedzi.
+	  </div>
+	  <% end%>
+  <% end %>
 
   <div class="field">
     <%= f.label :transmitter_id %><br>
@@ -17,8 +31,11 @@
   </div>
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name%>
   </div>
+  
+  
+  
   <div class="field">
     <%= f.label :frequency %><br>
     <%= f.text_field :frequency %>

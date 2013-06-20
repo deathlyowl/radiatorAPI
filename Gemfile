@@ -7,6 +7,9 @@ gem 'rails', '4.0.0.rc1'
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'rails3-jquery-autocomplete'
+gem 'nifty-generators'
+gem 'stringex'
 
 gem 'pg'
 
