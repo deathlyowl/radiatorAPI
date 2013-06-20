@@ -5,6 +5,15 @@ class ChannelsController < ApplicationController
   # GET /channels.json
   def index
     @channels = Channel.all.sort_by{|e| e[:transmitter]}
+    
+    @counter = 0
+    Channel.all.each do |channel|
+      if Station.where(:name => channel.name).count != 0
+        @counter += 1
+      end
+    end
+    
+    @percentage = @counter.to_f/Channel.all.count.to_f
   end
 
   # GET /channels/1

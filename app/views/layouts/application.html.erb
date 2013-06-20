@@ -8,6 +8,11 @@
 </head>
 <body>
 	<div class="container">
+		<ul class="nav nav-tabs">
+		  <li class="<%= params[:controller] == "stations" ? "active" : "" %>"><a href="\stations"> Stations</a>
+		  <li class="<%= params[:controller] == "transmitters" ? "active" : "" %>"><a href="\transmitters"> Transmitters</a>
+		  <li class="<%= params[:controller] == "channels" ? "active" : "" %>"><a href="\channels"> Channels</a>
+		</ul>
 	    <%= yield %>
 	</div>
 </body>
