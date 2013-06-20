@@ -4,7 +4,10 @@ class StationsController < ApplicationController
   # GET /stations
   # GET /stations.json
   def index
-    @stations = Station.all
+    respond_to do |format|
+        format.html { @stations = Station.all.paginate :page => params[:page] }
+        format.json { @stations = Station.all }
+    end
   end
 
   # GET /stations/1

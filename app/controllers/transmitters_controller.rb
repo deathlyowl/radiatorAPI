@@ -4,7 +4,11 @@ class TransmittersController < ApplicationController
   # GET /transmitters
   # GET /transmitters.json
   def index
-    @transmitters = Transmitter.all
+
+    respond_to do |format|
+        format.html { @transmitters = Transmitter.all.paginate :page => params[:page] }
+        format.json { @transmitters = Transmitter.all }
+    end    
   end
 
   # GET /transmitters/1

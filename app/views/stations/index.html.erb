@@ -30,7 +30,8 @@
   </tbody>
 </table>
 
-<br>
+<%= will_paginate @stations %>
+
 
 <%= link_to 'New Station', new_station_path %>|
 <%= link_to "Import Station", :action => "import" %>
