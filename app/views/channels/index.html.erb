@@ -1,34 +1,40 @@
 <h1>Listing channels</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Transmitter</th>
-      <th>Name</th>
-      <th>Frequency</th>
-      <th>Power</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @channels.each do |channel| %>
+<table class="table table-striped table-bordered">
+    <thead>
       <tr>
-        <td><%= channel.transmitter_id %></td>
-        <td><%= channel.name %></td>
-        <td><%= channel.frequency %></td>
-        <td><%= channel.power %></td>
-		<td><%= Station.where(:name => channel.name).count %></td>
-        <td><%= link_to 'Show', channel %></td>
-        <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
-        <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Transmitter</th>
+        <th>Name</th>
+        <th>Frequency</th>
+        <th>Power</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
+    </thead>
+    <tbody>
+      <% @channels.each do |channel| %>
+        <tr class="<%= Station.where(:name => channel.name).count == 0 ? "error" : "success" %>">
+          <td><%= Transmitter.find(channel.transmitter_id).place %></td>
+          <td><%= channel.name %></td>
+          <td><%= channel.frequency %></td>
+          <td><%= channel.power %></td>
+  		<td><%= Station.where(:name => channel.name).count %></td>
+          <td><%= link_to 'Show', channel %></td>
+          <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
+          <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+<!--
+<table>
+  
+
+  
 </table>
 
 <br>
+-->
+
+</table>
 
 <%= link_to 'New Channel', new_channel_path %>

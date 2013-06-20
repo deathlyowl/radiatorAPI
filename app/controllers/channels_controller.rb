@@ -4,7 +4,7 @@ class ChannelsController < ApplicationController
   # GET /channels
   # GET /channels.json
   def index
-    @channels = Channel.all
+    @channels = Channel.all.sort_by{|e| e[:transmitter]}
   end
 
   # GET /channels/1
