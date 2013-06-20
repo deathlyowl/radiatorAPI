@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Object:</strong>
+  <%= @transmitter.object %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @transmitter.city %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @transmitter.place %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @transmitter.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @transmitter.longitude %>
+</p>
+
+<hr>
+
+<%= @transmitter.channels.count %> kanałów |
+<%= link_to 'Edit', edit_transmitter_path(@transmitter) %> |
+<%= link_to 'Back', transmitters_path %>

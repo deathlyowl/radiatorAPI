@@ -1,0 +1,37 @@
+<%= form_for(@transmitter) do |f| %>
+  <% if @transmitter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transmitter.errors.count, "error") %> prohibited this transmitter from being saved:</h2>
+
+      <ul>
+      <% @transmitter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :object %><br>
+    <%= f.text_field :object %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

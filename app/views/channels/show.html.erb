@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transmitter:</strong>
+  <%= @channel.transmitter_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @channel.name %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @channel.frequency %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @channel.power %>
+</p>
+
+<%= link_to 'Edit', edit_channel_path(@channel) %> |
+<%= link_to 'Back', channels_path %>
