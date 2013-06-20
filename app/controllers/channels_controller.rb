@@ -43,16 +43,6 @@ class ChannelsController < ApplicationController
 
   # GET /channels/1/edit
   def edit
-    @something = Array.new
-    Station.all.each do |station|
-      
-
-      
-      
-      if @channel.name.to_ascii.downcase.include?(station.name.to_ascii.downcase) || station.name.to_ascii.downcase.include?(@channel.name.to_ascii.downcase)
-        @something << station.name
-      end 
-    end
   end
 
   # POST /channels
