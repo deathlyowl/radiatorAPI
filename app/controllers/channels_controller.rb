@@ -15,6 +15,7 @@ class ChannelsController < ApplicationController
   # GET /channels/import
   def import
     @transmitter = Transmitter.new
+    @array = Array.new
   end
   
   # POST /transmitters/import
@@ -29,18 +30,6 @@ class ChannelsController < ApplicationController
       @channel.power = @array[3]
       @channel.save
     end
-#    params[:csv].split("|").each do |row|
- #     @array = row.split(";")
-#      @transmitter = Transmitter.new
-#      @transmitter.object = @array[0]
-#      @transmitter.city = @array[1]
-#      @transmitter.place = @array[2]
-#      @transmitter.longitude = @array[3]
-#      @transmitter.latitude = @array[4]
-#      @transmitter.save
-#    end
-    
-    
     render action: 'import'
   end
 
