@@ -43,6 +43,7 @@ class ChannelsController < ApplicationController
 
   # GET /channels/1/edit
   def edit
+    @transmitter = @channel.transmitter
   end
 
   # POST /channels

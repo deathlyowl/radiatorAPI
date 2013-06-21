@@ -10,6 +10,9 @@
 	 <li><%= link_to "Next", edit_channel_path(Channel.find(params[:id].to_i+1)), method: :get %></li>
   </ul>
 </div>
-
+<hr>
+<h2><%= @transmitter.place %></h2>
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @transmitter.longitude %>,<%= @transmitter.latitude %>&markers=size:big%7Ccolor:green%7C<%= @transmitter.longitude %>,<%= @transmitter.latitude %>&zoom=6&size=400x150&maptype=roadmap&scale=2&sensor=false" class="image-circle">
+<hr>
 <%= link_to 'Show', @channel %> |
 <%= link_to 'Back', channels_path %>
