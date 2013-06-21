@@ -3,8 +3,10 @@
 <table class="table table-striped table-bordered">
     <tbody>
       <% @channels.each do |channel| %>
-	  	<% if Station.where(:name => channel.name).count == 0 %>
-    		<tr class="error">
+	  	<% if Station.where(:name => channel.name).count == 0 && channel.hint %>
+    		<tr class="info">
+		<% elsif Station.where(:name => channel.name).count == 0 %>
+	    		<tr class="error">
 				
 	  	<% else %>
 	      	<tr class="success">	
