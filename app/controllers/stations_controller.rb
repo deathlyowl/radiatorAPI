@@ -50,6 +50,7 @@ class StationsController < ApplicationController
 
   # GET /stations/1/edit
   def edit
+    @example = @station
   end
 
   # POST /stations
