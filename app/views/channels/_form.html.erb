@@ -12,17 +12,22 @@
   <% end %>
 
   <% if Station.where(:name => @channel.name).count == 0 then %>
-  <% if @channel.hint %>
-	  <div class="alert alert-info">
-	    <button type="button" class="close" data-dismiss="alert">&times;</button>
-	    <strong>Podpowiedź!</strong> Być może stacja, której szukasz to <%= @channel.hint %>?.
-	  </div>
+	  <% if @channel.hint %>
+		  <div class="alert alert-info">
+		    <button type="button" class="close" data-dismiss="alert">&times;</button>
+		    <strong>Podpowiedź!</strong> Być może stacja, której szukasz to <%= @channel.hint %>?.
+		  </div>
 	  <% else%>
-	  <div class="alert alert-error">
-	    <button type="button" class="close" data-dismiss="alert">&times;</button>
-	    <strong>Problem!</strong> Niestety nie mam dla Ciebie żadnej podpowiedzi.
-	  </div>
+		  <div class="alert alert-error">
+		    <button type="button" class="close" data-dismiss="alert">&times;</button>
+		    <strong>Problem!</strong> Niestety nie mam dla Ciebie żadnej podpowiedzi.
+		  </div>
 	  <% end%>
+<% else%>
+		  <div class="alert alert-success">
+		    <button type="button" class="close" data-dismiss="alert">&times;</button>
+		    <strong>Super!</strong> Kanał jest sparowany ze stacją.
+		  </div>
   <% end %>
 
   <div class="field">

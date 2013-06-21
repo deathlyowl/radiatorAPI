@@ -2,5 +2,12 @@
 
 <%= render 'form' %>
 
+<div class="pagination">
+  <ul>
+    <li><%= link_to "Prev", edit_channel_path(Channel.find(params[:id].to_i-1)), method: :get %></li>
+	 <li><%= link_to "Next", edit_channel_path(Channel.find(params[:id].to_i+1)), method: :get %></li>
+  </ul>
+</div>
+
 <%= link_to 'Show', @channel %> |
 <%= link_to 'Back', channels_path %>
