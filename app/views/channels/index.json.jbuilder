@@ -1,7 +1,5 @@
 json.array!(@channels) do |channel|
-	if !channel.transmitter
-		continue
-	end
+	!channel.transmitter ? next : ""
   	json.extract! channel, :name, :frequency, :power
 	json.extract! channel.transmitter, :longitude, :latitude
 end
