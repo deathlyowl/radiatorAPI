@@ -8,6 +8,7 @@ RadiatorAPI::Application.routes.draw do
   resources :transmitters
 
   get 'stations/import' => 'stations#import'
+  get 'stations/:id/report' => 'stations#report'
   post 'stations/import' => 'stations#importCreate'
   resources :stations
 

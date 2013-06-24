@@ -52,6 +52,13 @@ class StationsController < ApplicationController
   def edit
     @example = @station
   end
+  
+  # GET /stations/1/report
+  def report
+    @station = Station.find(params[:id])
+    ReportsMailer.report_mail(params[:id]).deliver
+    redirect_to @station, notice: 'Station stream reported.'
+  end
 
   # POST /stations
   # POST /stations.json
